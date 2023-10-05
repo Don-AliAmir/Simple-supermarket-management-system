@@ -1,0 +1,71 @@
+ #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// Define a structure to represent a product
+struct Product {
+    char name[100];
+    float price;
+    int quantity;
+};
+
+// Function to display the available products
+void displayInventory(struct Product inventory[], int size) {
+    printf("Product Inventory:\n");
+    for (int i = 0; i < size; i++) {
+        printf("%d. %s - Price: %.2f - Quantity: %d\n", i + 1, inventory[i].name, inventory[i].price, inventory[i].quantity);
+    }
+}
+
+// Function to add items to the shopping cart
+void addToCart(struct Product cart[], struct Product inventory[], int cartSize, int itemIndex) {
+    // Implement code to add items to the cart
+}
+
+// Function to calculate the total bill
+float calculateTotal(struct Product cart[], int cartSize) {
+    // Implement code to calculate the total bill
+}
+
+int main() {
+    // Initialize the inventory with sample products
+    struct Product inventory[] = {
+        {"Product1", 10.99, 50},
+        {"Product2", 5.99, 100},
+        {"Product3", 2.49, 75}
+    };
+
+    // Define variables for the shopping cart
+    struct Product cart[100]; // Assuming a maximum of 100 items in the cart
+    int cartSize = 0;
+
+    int choice;
+    do {
+        printf("\nSupermarket Management System\n");
+        printf("1. Display Inventory\n");
+        printf("2. Add to Cart\n");
+        printf("3. Calculate Bill\n");
+        printf("4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                displayInventory(inventory, sizeof(inventory) / sizeof(inventory[0]));
+                break;
+            case 2:
+                // Implement code to add items to the cart
+                break;
+            case 3:
+                // Implement code to calculate and display the bill
+                break;
+            case 4:
+                printf("Exiting program. Thank you!\n");
+                break;
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    } while (choice != 4);
+
+    return 0;
+}
